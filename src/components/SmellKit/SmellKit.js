@@ -1,3 +1,4 @@
+import './SmellKit.css'
 import React, { Component } from 'react';
 import Item from '../Item/Item'
 import PropTypes from 'prop-types'
@@ -11,6 +12,11 @@ class SmellKit extends Component {
                     id: 1,
                     name: 'Candle',
                     image: 'https://images.unsplash.com/photo-1545659446-f03b9dc0827a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'
+                },
+                2: {
+                    id: 2,
+                    name: 'Lemon',
+                    image: 'https://images.unsplash.com/photo-1568569350062-ebfa3cb195df?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'
                 }
             }
         }
@@ -32,7 +38,9 @@ class SmellKit extends Component {
         return(
             <div className='smell-kit'>
                 <h1>Your Smell Kit</h1>
-                {itemCards}
+                <div className='items-container'>
+                    {itemCards}
+                </div>
             </div>
         )
     }
