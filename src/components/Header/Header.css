@@ -1,24 +1,35 @@
 .header {
+    align-items: center;
+    color: black;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    margin: 2%;
     font-family: Oswald;
+    justify-content: space-between;
+    margin-left: 2%;
 }
 
 .links-container {
-    width: 40vw;
     display: flex;
     justify-content: space-around;
+    width: 40vw;
 }
 
-button {
+.header-link {
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    color: black;
     font-family: Oswald;
     font-size: 1.5em;
-    border: none;
-    background: none;
+    height: 50%;
+    text-align: center;
 }
 
-button:hover {
-    background: lavender;
+.main-header-link:visited,
+.header-link:visited {
+    color: black;
+}
+
+.header-link:hover {
+    border-bottom: 3px solid lavender;
 }
