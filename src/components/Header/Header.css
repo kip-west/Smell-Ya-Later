@@ -1,11 +1,13 @@
 .header {
     align-items: center;
+    background-color: ghostwhite;
     color: black;
     display: flex;
     flex-direction: row;
     font-family: Oswald;
     justify-content: space-between;
-    margin-left: 2%;
+    padding-left: 2%;
+    margin-top: none;
 }
 
 .links-container {

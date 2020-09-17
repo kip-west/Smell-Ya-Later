@@ -1,13 +1,14 @@
 .smell-kit {
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    font-family: Oswald;
 }
 
 .items-container {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
     margin-left: 15%;
     margin-right: 15%;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 20px;
 }
