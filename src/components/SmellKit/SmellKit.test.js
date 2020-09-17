@@ -10,4 +10,14 @@ describe('SmellKit', () => {
 
         expect(heading).toBeInTheDocument();
     })
+
+    it('Should render one item card for each item in state', () => {
+        render(<SmellKit />)
+
+        const card1Heading = screen.getByRole('Heading', { name: 'Candle' })
+        const card1Image = screen.getByAltText('Candle')
+
+        expect(card1Heading).toBeInTheDocument();
+        expect(card1Image).toBeInTheDocument();
+    })
 })
