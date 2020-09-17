@@ -1,16 +1,17 @@
 .item-card {
     font-family: Oswald;
-    width: 300px;
     background: lavender;
     display: flex;
     flex-direction: column;   
     align-items: center;
-    padding: 1%;
+    padding: 5%;
     border-radius: 10px;
+    justify-content: center;
 }
 
 .item-image {
-    width: 250px;
+    width: 100%;
+    object-fit: contain;
 }
 
 .item-name {

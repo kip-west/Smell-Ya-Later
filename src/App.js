@@ -1,12 +1,12 @@
 import React from 'react';
-import Item from './components/Item/Item'
+import SmellKit from './components/SmellKit/SmellKit'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <h1>Smell Ya Later</h1>
-        <Item />
+        <SmellKit />
       </header>
     </div>
   );
