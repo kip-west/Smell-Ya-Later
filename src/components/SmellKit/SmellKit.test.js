@@ -14,7 +14,7 @@ describe('SmellKit', () => {
     it('Should render one item card for each item in state', () => {
         render(<SmellKit />)
 
-        const card1Heading = screen.getByRole('Heading', { name: 'Candle' })
+        const card1Heading = screen.getByRole('heading', { name: 'Candle' })
         const card1Image = screen.getByAltText('Candle')
 
         expect(card1Heading).toBeInTheDocument();

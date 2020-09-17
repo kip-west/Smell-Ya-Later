@@ -19,15 +19,20 @@ class SmellKit extends Component {
     createItemCards = () => {
         const items = this.state.items;
         const itemIds = Object.keys(this.state.items);
-        itemIds.map(id => {
-            return <Item id={id} name={items[id].name} image={items[id].image} />
+        return itemIds.map(id => {
+            const name = items[id].name;
+            const imageUrl = items[id].image;
+            console.log(name, imageUrl)
+            return <Item key={id} id={id} name={items[id].name} imageUrl={items[id].image} />
         })
     }
     
     render() {
+        const itemCards = this.createItemCards()
         return(
             <div className='smell-kit'>
                 <h1>Your Smell Kit</h1>
+                {itemCards}
             </div>
         )
     }
