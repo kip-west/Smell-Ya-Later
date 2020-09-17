@@ -1,4 +1,5 @@
 import React from 'react';
+import './App.css'
 import SmellKit from '../SmellKit/SmellKit'
 import Header from '../Header/Header'
 import { BrowserRouter, Route } from 'react-router-dom'
