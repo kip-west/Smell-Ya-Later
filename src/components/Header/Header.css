@@ -1,0 +1,35 @@
+.header {
+    align-items: center;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    font-family: Oswald;
+    justify-content: space-between;
+    margin-left: 2%;
+}
+
+.links-container {
+    display: flex;
+    justify-content: space-around;
+    width: 40vw;
+}
+
+.header-link {
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    color: black;
+    font-family: Oswald;
+    font-size: 1.5em;
+    height: 50%;
+    text-align: center;
+}
+
+.main-header-link:visited,
+.header-link:visited {
+    color: black;
+}
+
+.header-link:hover {
+    border-bottom: 3px solid lavender;
+}
