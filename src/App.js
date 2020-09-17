@@ -1,14 +1,14 @@
 import React from 'react';
 import SmellKit from './components/SmellKit/SmellKit'
+import Header from './components/Header/Header'
+import Router from 'react-router-dom'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Smell Ya Later</h1>
+    <main className="App">
+        <Header />
         <SmellKit />
-      </header>
-    </div>
+    </main>
   );
 }
 
