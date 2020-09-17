@@ -1,0 +1,18 @@
+.item-card {
+    font-family: Oswald;
+    width: 300px;
+    background: lavender;
+    display: flex;
+    flex-direction: column;   
+    align-items: center;
+    padding: 1%;
+    border-radius: 10px;
+}
+
+.item-image {
+    width: 250px;
+}
+
+.item-name {
+    margin: 0;
+}
