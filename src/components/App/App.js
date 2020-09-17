@@ -1,6 +1,6 @@
 import React from 'react';
-import SmellKit from './components/SmellKit/SmellKit'
-import Header from './components/Header/Header'
+import SmellKit from '../SmellKit/SmellKit'
+import Header from '../Header/Header'
 import { BrowserRouter, Route } from 'react-router-dom'
 
 function App() {
