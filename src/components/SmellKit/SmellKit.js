@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Item from '../Item/Item'
+import PropTypes from 'prop-types'
 
 class SmellKit extends Component {
     constructor() {
@@ -13,6 +15,14 @@ class SmellKit extends Component {
             }
         }
     }
+
+    createItemCards = () => {
+        const items = this.state.items;
+        const itemIds = Object.keys(this.state.items);
+        itemIds.map(id => {
+            return <Item id={id} name={items[id].name} image={items[id].image} />
+        })
+    }
     
     render() {
         return(
@@ -21,6 +31,12 @@ class SmellKit extends Component {
             </div>
         )
     }
+}
+
+SmellKit.propTypes = {
+    id: PropTypes.number,
+    image: PropTypes.string,
+    name: PropTypes.string,
 }
 
 export default SmellKit
