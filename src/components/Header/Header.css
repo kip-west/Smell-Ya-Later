@@ -1,0 +1,24 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 2%;
+    font-family: Oswald;
+}
+
+.links-container {
+    width: 40vw;
+    display: flex;
+    justify-content: space-around;
+}
+
+button {
+    font-family: Oswald;
+    font-size: 1.5em;
+    border: none;
+    background: none;
+}
+
+button:hover {
+    background: lavender;
+}
