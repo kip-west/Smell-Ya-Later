@@ -33,7 +33,7 @@ describe('App', () => {
     const userProfileButton = screen.getByRole('link', { name: 'User Profile' })
     fireEvent.click(userProfileButton)
 
-    const userProfileHeading = screen.getByRole('heading', { name: 'User Profile!' })
+    const userProfileHeading = screen.getByRole('heading', { name: 'User Profile' })
     expect(userProfileHeading).toBeInTheDocument();
 
     const activityButton = screen.getByRole('link', { name: 'Activity' })
