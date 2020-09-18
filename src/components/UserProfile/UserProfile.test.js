@@ -36,5 +36,22 @@ describe('User Profile', () => {
             expect(nameInput.value).toBe('Jake')
             expect(phoneInput.value).toBe('+1(555)-555-5555')
         })
+
+        it('Should fire a method & clear form inputs on submit', () => {
+            const userProfile = render(<UserProfile />)
+            
+            const nameInput = screen.getByPlaceholderText('Enter name here')
+            const phoneInput = screen.getByPlaceholderText('Enter phone number here')
+            const submitButton = screen.getByRole('button', { name: 'Submit' })
+
+            fireEvent.change(nameInput, { target: { value:  'Jake'} })
+            fireEvent.change(phoneInput, { target: { value: '+1(555)-555-5555' }})
+            expect(nameInput.value).toBe('Jake')
+            expect(phoneInput.value).toBe('+1(555)-555-5555')
+            
+            fireEvent.click(submitButton)
+            expect(nameInput.value).toBe('')
+            expect(phoneInput.value).toBe('')
+        })
     })
 })
