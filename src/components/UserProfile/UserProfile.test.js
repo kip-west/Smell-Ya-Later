@@ -59,6 +59,8 @@ describe('User Profile', () => {
 
             const nameInput = screen.getByPlaceholderText('Enter name here')
             const phoneInput = screen.getByPlaceholderText('Enter phone number here')
+            nameInput.value = '';
+            phoneInput.value = '555-555-5555'
             const submitButton = screen.getByRole('button', { name: 'Submit' })
 
             fireEvent.click(submitButton)
