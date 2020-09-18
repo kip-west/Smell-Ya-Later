@@ -38,7 +38,7 @@ describe('User Profile', () => {
         })
 
         it('Should fire a method & clear form inputs on submit', () => {
-            const userProfile = render(<UserProfile />)
+            render(<UserProfile />)
             
             const nameInput = screen.getByPlaceholderText('Enter name here')
             const phoneInput = screen.getByPlaceholderText('Enter phone number here')
@@ -52,6 +52,18 @@ describe('User Profile', () => {
             fireEvent.click(submitButton)
             expect(nameInput.value).toBe('')
             expect(phoneInput.value).toBe('')
+        })
+
+        it('Should return an error message if form inputs are empty', () => {
+            render(<UserProfile />)
+
+            const nameInput = screen.getByPlaceholderText('Enter name here')
+            const phoneInput = screen.getByPlaceholderText('Enter phone number here')
+            const submitButton = screen.getByRole('button', { name: 'Submit' })
+
+            fireEvent.click(submitButton)
+            let errorMessage = screen.getByText('Please provide both a name and phone number!')
+            expect(errorMessage).toBeInTheDocument()
         })
     })
 })
