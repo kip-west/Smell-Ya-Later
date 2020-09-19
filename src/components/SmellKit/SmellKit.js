@@ -21,14 +21,13 @@ class SmellKit extends Component {
             this.setState({ error: error })
         }
     }
-
     createItemCards = () => {
         const items = this.state.items;
         const itemIds = Object.keys(this.state.items);
         return itemIds.map(id => {
             const name = items[id].name;
             const imageUrl = items[id].image;
-            return <Item key={id} id={id} name={items[id].name} imageUrl={items[id].image} />
+            return <Item key={id} id={id} name={name} imageUrl={imageUrl} />
         })
     }
     
