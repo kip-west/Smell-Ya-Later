@@ -27,7 +27,7 @@ describe('Item', () => {
 
         expect(sendMessage).toBeCalledTimes(1)
         expect(sendMessage).toBeCalledWith({
-            "to": "+19102625254",
+            "to": "+15555555555",
             "body": "Candle"
         })
     })

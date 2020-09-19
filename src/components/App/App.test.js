@@ -39,7 +39,7 @@ describe('App', () => {
     const activityButton = screen.getByRole('link', { name: 'Activity' })
     fireEvent.click(activityButton)
 
-    const activityHeading = screen.getByRole('heading', { name: 'Recent Activity!' })
+    const activityHeading = screen.getByRole('heading', { name: 'Recent Activity' })
     expect(activityHeading).toBeInTheDocument();
 
     const homeButton = screen.getByRole('link', { name: 'Home' });
