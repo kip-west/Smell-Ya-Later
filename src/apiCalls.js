@@ -9,3 +9,20 @@ export const fetchItems = async () => {
         throw response
     }
 }
+
+export const sendMessage = async (body) => {
+    console.log(body)
+    const response = await fetch(`${rootUrl}/api/v1/messages`, {
+        'method': 'POST',
+        'headers': {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(body)
+    })
+    if(response.ok) {
+        const res = response.json()
+        return res
+    } else {
+        throw response
+    }
+}
