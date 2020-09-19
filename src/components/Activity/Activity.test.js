@@ -19,22 +19,22 @@ describe('Activity', () => {
                 {
                     body: 'Lemon 3',
                     direction: 'inbound',
-                    dateCreate: '2020-09-15T17:00:00.000Z'
+                    dateCreated: '2020-09-15T17:00:00.000Z'
                 },
                 {
                     body: 'Candle 2',
                     direction: 'inbound',
-                    dateCreate: '2020-09-15T17:00:00.000Z'
+                    dateCreated: '2020-09-15T17:00:00.000Z'
                 },
                 {
                     body: 'Rosemary 3',
                     direction: 'inbound',
-                    dateCreate: '2020-09-15T17:00:00.000Z'
+                    dateCreated: '2020-09-15T17:00:00.000Z'
                 },
                 {
                     body: 'Eucalyptus 1',
                     direction: 'inbound',
-                    dateCreate: '2020-09-15T17:00:00.000Z'
+                    dateCreated: '2020-09-15T17:00:00.000Z'
                 }
             ]
         })
