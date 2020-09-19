@@ -6,7 +6,7 @@ describe('Activity', () => {
     it('Should render the correct information', () => {
         render(<Activity />)
 
-        const heading = screen.getByRole('heading', { name: 'Activity' })
+        const heading = screen.getByRole('heading', { name: 'Recent Activity' })
     })
 
     it('Should call the getAllMessages method on display', () => {
