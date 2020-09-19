@@ -10,6 +10,16 @@ export const fetchItems = async () => {
     }
 }
 
+export const getAllMessages = async () => {
+    const response = await fetch(`${rootUrl}/api/v1/messages`)
+    if(response.ok) {
+        const allMessages = response.json()
+        return allMessages
+    } else {
+        throw response
+    }
+}
+
 export const sendMessage = async (body) => {
     console.log(body)
     const response = await fetch(`${rootUrl}/api/v1/messages`, {
