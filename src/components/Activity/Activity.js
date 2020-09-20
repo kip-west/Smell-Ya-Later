@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './Activity.css'
 import { getAllMessages } from '../../apiCalls'
 import ActivityDetails from '../ActivityDetails/ActivityDetails'
+import Moment from 'react-moment'
 
 class Activity extends Component {
     constructor() {
@@ -16,7 +17,8 @@ class Activity extends Component {
         try {
             const data = await getAllMessages()
             const messages = data.messages.map(message => { 
-                return({ body: message.body, dateCreated: message.dateCreated, direction: message.direction, id: message.sid })
+                const reformattedDate = <Moment>{message.dateCreated}</Moment>
+                return({ body: message.body, dateCreated: reformattedDate, direction: message.direction, id: message.sid })
             })
             this.setState({ messages: messages })
         } catch (error) {
@@ -45,7 +47,6 @@ class Activity extends Component {
     createList(messages) {
         const filteredMessages = messages.filter(message => this.checkMessageBody(message))
         return filteredMessages.map(message => {
-            console.log(message)
             const body = message.body.split(' ')
             return(<ActivityDetails key={message.id} id={message.id} item={body[0]} rating={body[1]} date={message.dateCreated} />)
         })
