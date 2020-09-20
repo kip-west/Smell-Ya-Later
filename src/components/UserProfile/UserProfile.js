@@ -2,13 +2,9 @@ import React, { Component } from 'react';
 import './UserProfile.css'
 
 class UserProfile extends Component {
-    constructor() {
+    constructor(props) {
         super();
         this.state = {
-            userInfo: {
-                name: '',
-                phoneNumber: '',
-            },
             nameInput: '',
             phoneNumberInput: '',
             error: '',
@@ -22,16 +18,10 @@ class UserProfile extends Component {
     checkFormInputs = () => {
         const nameInput = document.querySelector('.name-input');
         const phoneInput = document.querySelector('.phone-input')
-        debugger
         if(!nameInput.value || !phoneInput.value) {
             this.setState({ error: 'Please provide both a name and phone number!'})
         } else if (nameInput.value && phoneInput.value) {
-            this.setState( { 
-                userInfo: {
-                    name: this.state.nameInput,
-                    phoneNumber: this.state.phoneNumberInput
-                }
-            })
+            this.props.updateProfile({ name: nameInput.value, phoneNumber: phoneInput.value})
         }
     }
 
@@ -53,6 +43,11 @@ class UserProfile extends Component {
             <div className='user-profile-container'>
                 <h1>User Profile</h1>
                 <div className='form-container'>
+                <div className='current-user-info'>
+                    <h2 className='contact-info-header'>Current Contact Information</h2>
+                    <p className='contact-info-label'><i>Name</i> :  {this.props.user.name ? this.props.user.name : 'Please update name below'}</p>
+                    <p className='contact-info-label'><i>Number</i> :  {this.props.user.phoneNumber ? this.props.user.phoneNumber : 'Please update phone number below'}</p>
+                </div>
                     <h2>Update Contact Information</h2>
                     <form className='update-profile-form' onSubmit={this.handleSubmit}>
                         <input className='name-input' name='nameInput' placeholder='Enter name here' onChange={this.handleChange} />
