@@ -6,3 +6,8 @@
     flex-direction: column;
     align-items: center;
 }
+
+.ratings-container {
+    display: flex;
+    flex-direction: row;
+}
