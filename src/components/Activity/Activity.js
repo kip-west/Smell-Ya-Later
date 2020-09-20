@@ -16,7 +16,7 @@ class Activity extends Component {
         try {
             const data = await getAllMessages()
             const messages = data.messages.map(message => { 
-                return({ body: message.body, dateCreated: message.dateCreated, direction: message.direction })
+                return({ body: message.body, dateCreated: message.dateCreated, direction: message.direction, id: message.sid })
             })
             this.setState({ messages: messages })
         } catch (error) {
@@ -45,8 +45,9 @@ class Activity extends Component {
     createList(messages) {
         const filteredMessages = messages.filter(message => this.checkMessageBody(message))
         return filteredMessages.map(message => {
+            console.log(message)
             const body = message.body.split(' ')
-            return(<ActivityDetails item={body[0]} rating={body[1]} date={message.dateCreated} />)
+            return(<ActivityDetails key={message.id} id={message.id} item={body[0]} rating={body[1]} date={message.dateCreated} />)
         })
     }
 
