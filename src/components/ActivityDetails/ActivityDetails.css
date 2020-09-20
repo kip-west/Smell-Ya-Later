@@ -14,8 +14,9 @@
 }
 
 .date {
-    font-size: 1em;
+    font-size: 0.75em;
     margin: 0;
+    font-style: italic;
 }
 
 .close {
