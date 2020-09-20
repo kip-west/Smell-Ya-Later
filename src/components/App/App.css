@@ -2,3 +2,23 @@ body {
     background-color: lavender;
     margin: 0;
 }
+
+.about-dropdown {
+    font-family: Oswald;
+    color: rgba(41, 30, 50, 1);
+    text-align: center;
+}
+
+.about-text {
+    margin-left: 15%;
+    margin-right: 15%;
+    text-align: left;
+    font-family: 'Open Sans';
+    text-indent: 3%;
+}
+
+.about-header,
+.about-text {
+    margin-top: 0;
+    margin-bottom: 0;
+}
