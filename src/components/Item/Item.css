@@ -17,3 +17,7 @@
 .item-name {
     margin: 0;
 }
+
+.send-text-button {
+    color: rgba(41, 30, 50, 1)
+}
