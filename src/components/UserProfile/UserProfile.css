@@ -62,3 +62,16 @@
     font-style: italic;
     height: 1em;
 }
+
+.contact-info-header {
+    text-align: center;
+}
+
+.contact-info-label {
+    font-family: 'Open Sans'
+}
+
+.current-user-info {
+    border-bottom: 1px solid rgba(41, 30, 50, 0.25);
+    width: 90%;
+}

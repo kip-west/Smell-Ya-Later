@@ -44,9 +44,9 @@ class UserProfile extends Component {
                 <h1>User Profile</h1>
                 <div className='form-container'>
                 <div className='current-user-info'>
-                    <h2>Current Contact Information</h2>
-                    <p>Name: {this.props.user.name ? this.props.user.name : 'Please update name'}</p>
-                    <p>Number: {this.props.user.phoneNumber ? this.props.user.phoneNumber : 'Please update phone number'}</p>
+                    <h2 className='contact-info-header'>Current Contact Information</h2>
+                    <p className='contact-info-label'><i>Name</i> :  {this.props.user.name ? this.props.user.name : 'Please update name below'}</p>
+                    <p className='contact-info-label'><i>Number</i> :  {this.props.user.phoneNumber ? this.props.user.phoneNumber : 'Please update phone number below'}</p>
                 </div>
                     <h2>Update Contact Information</h2>
                     <form className='update-profile-form' onSubmit={this.handleSubmit}>
