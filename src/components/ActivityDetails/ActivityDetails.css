@@ -3,22 +3,22 @@
     background-color: ghostwhite;
     color: rgba(41, 30, 50, 1);
     margin-bottom: 10px;
-    padding: 3%;
+    padding: 0 2% 2% 2%;
 }
 
 .rating {
-    display: flex;
-    justify-content: space-between;
-    font-size: 1.25em;
-    margin: 0;
-}
-
-.date {
     font-size: 1em;
     margin: 0;
 }
 
+.date {
+    font-size: 0.75em;
+    margin: 0;
+    font-style: italic;
+}
+
 .close {
+    float: right;
     color: red;
     opacity: 0.5;
     font-weight: bold;

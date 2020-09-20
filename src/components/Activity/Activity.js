@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './Activity.css'
 import { getAllMessages } from '../../apiCalls'
 import ActivityDetails from '../ActivityDetails/ActivityDetails'
+import Moment from 'react-moment'
 
 class Activity extends Component {
     constructor() {
@@ -16,7 +17,8 @@ class Activity extends Component {
         try {
             const data = await getAllMessages()
             const messages = data.messages.map(message => { 
-                return({ body: message.body, dateCreated: message.dateCreated, direction: message.direction })
+                const reformattedDate = <Moment>{message.dateCreated}</Moment>
+                return({ body: message.body, dateCreated: reformattedDate, direction: message.direction, id: message.sid })
             })
             this.setState({ messages: messages })
         } catch (error) {
@@ -46,7 +48,7 @@ class Activity extends Component {
         const filteredMessages = messages.filter(message => this.checkMessageBody(message))
         return filteredMessages.map(message => {
             const body = message.body.split(' ')
-            return(<ActivityDetails item={body[0]} rating={body[1]} date={message.dateCreated} />)
+            return(<ActivityDetails key={message.id} id={message.id} item={body[0]} rating={body[1]} date={message.dateCreated} />)
         })
     }
 
@@ -57,21 +59,21 @@ class Activity extends Component {
                 <h1>Recent Activity</h1>
                 {this.state.messages && 
                 <div className='all-ratings-container'>
-                    <div className='ratings-container lemon-ratings'>
-                        <h1 className='column-header'>Lemon</h1>
-                        {ratings.filter(rating => rating.props.item === 'Lemon')}
-                    </div>
                     <div className='ratings-container candle-ratings'>
                         <h1 className='column-header'>Candle</h1>
                         {ratings.filter(rating => rating.props.item === 'Candle')}
                     </div>
-                    <div className='ratings-container eucalyptus-ratings'>
-                        <h1 className='column-header'>Eucalyptus</h1>
-                        {ratings.filter(rating => rating.props.item === 'Eucalyptus')}
+                    <div className='ratings-container lemon-ratings'>
+                        <h1 className='column-header'>Lemon</h1>
+                        {ratings.filter(rating => rating.props.item === 'Lemon')}
                     </div>
                     <div className='ratings-container rosemary-ratings'>
                         <h1 className='column-header'>Rosemary</h1>
                         {ratings.filter(rating => rating.props.item === 'Rosemary')}
+                    </div>
+                    <div className='ratings-container eucalyptus-ratings'>
+                        <h1 className='column-header'>Eucalyptus</h1>
+                        {ratings.filter(rating => rating.props.item === 'Eucalyptus')}
                     </div>
                 </div>
                 }

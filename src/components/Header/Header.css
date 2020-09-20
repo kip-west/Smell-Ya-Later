@@ -8,6 +8,7 @@
     justify-content: space-between;
     padding-left: 2%;
     margin-top: none;
+    height: 8vh;
 }
 
 .links-container {
@@ -34,4 +35,59 @@
 
 .header-link:hover {
     border-bottom: 3px solid rgba(41, 30, 50, 1);
+}
+
+.main-header-link {
+    display: flex;
+    flex-direction: row;
+}
+
+.icon {
+    padding-top: 24px;
+    height: 40px;
+}
+
+
+.about-dropdown {
+    font-family: Oswald;
+    color: rgba(41, 30, 50, 1);
+    text-align: center;
+}
+
+.about-text {
+    margin-left: 15%;
+    margin-right: 15%;
+    text-align: left;
+    font-family: 'Open Sans';
+    text-indent: 5%;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.Collapsible {
+    width: 100vw;
+    background-color: rgba(248, 248, 255, 0.7);
+}
+
+.Collapsible__trigger {
+    display: block;
+    font-family: Oswald;
+    font-size: 1.25em;
+    width: 100%;
+}
+
+.Collapsible__trigger:hover {
+    cursor: pointer;
+    background-color: rgba(41, 30, 50, 1);
+    color: ghostwhite;
+}
+
+.is-open {
+    background-color: rgba(41, 30, 50, 1);
+    color: ghostwhite;
+}
+
+.is-open:hover {
+    background-color: rgba(248, 248, 255, 0.7);
+    color: rgba(41, 30, 50, 1);
 }

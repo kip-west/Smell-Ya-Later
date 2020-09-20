@@ -9,6 +9,7 @@
 }
 
 .all-ratings-container {
+    width: 100%;
     display: flex;
     flex-direction: row;
     display: grid;
