@@ -35,3 +35,13 @@
 .header-link:hover {
     border-bottom: 3px solid rgba(41, 30, 50, 1);
 }
+
+.main-header-link {
+    display: flex;
+    flex-direction: row;
+}
+
+.icon {
+    padding-top: 24px;
+    height: 40px;
+}
