@@ -15,10 +15,9 @@ const Item = ({ id, name, imageUrl }) => {
     }
 
     return(
-        <div className='item-card' id={id}>
-            <img className='item-image' src={imageUrl} alt={name} />
+        <div className='item-card' id={id} onClick={handleClick}>
+            <img className='item-image' src={imageUrl} alt={name}/>
             <h1 className='item-name'>{name}</h1>
-            <button className='send-text-button' name={name} onClick={handleClick}>Send Text</button>
         </div>
     )
 }
