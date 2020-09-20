@@ -4,9 +4,9 @@ import './ActivityDetails.css'
 const ActivityDetails = ({ item, rating, date }) => {
     return(
         <div className='Activity-Details'>
-            <h2>Your Rating: {rating}</h2>
-            <h3>on {date}</h3>
-            <button className='delete-button'>Delete</button>
+            <h2 className='rating'>Your Rating: {rating}<span class="close">&times;</span></h2>
+            <h3 className='date'>from {date}</h3>
+            
         </div>
     )
 }
