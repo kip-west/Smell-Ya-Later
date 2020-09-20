@@ -2,16 +2,18 @@ import React from 'react';
 import './Item.css'
 import { sendMessage } from '../../apiCalls'
 
-const Item = ({ id, name, imageUrl, user }) => {
+const Item = ({ id, name, imageUrl, user, isLoggedIn }) => {
     const handleClick = (event) => {
         event.preventDefault();
-        const itemName = name;
-        const phoneNumber = user.phoneNumber;
-        const body = {
-            to: phoneNumber,
-            body: itemName
+        if(isLoggedIn()) {
+            const itemName = name;
+            const phoneNumber = user.phoneNumber;
+            const body = {
+                to: phoneNumber,
+                body: itemName
+            }
+            sendMessage(body)
         }
-        sendMessage(body)
     }
 
     return(

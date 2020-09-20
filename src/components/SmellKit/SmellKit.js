@@ -27,7 +27,7 @@ class SmellKit extends Component {
         return itemIds.map(id => {
             const name = items[id].name;
             const imageUrl = items[id].image;
-            return <Item key={id} id={id} name={name} imageUrl={imageUrl} user={this.props.user} />
+            return <Item key={id} id={id} name={name} imageUrl={imageUrl} user={this.props.user} isLoggedIn={this.props.isLoggedIn} />
         })
     }
     
