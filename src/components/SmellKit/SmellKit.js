@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import { fetchItems } from '../../apiCalls'
 
 class SmellKit extends Component {
-    constructor() {
+    constructor(props) {
         super();
         this.state = {
             items: {},
@@ -27,7 +27,7 @@ class SmellKit extends Component {
         return itemIds.map(id => {
             const name = items[id].name;
             const imageUrl = items[id].image;
-            return <Item key={id} id={id} name={name} imageUrl={imageUrl} />
+            return <Item key={id} id={id} name={name} imageUrl={imageUrl} user={this.props.user} />
         })
     }
     

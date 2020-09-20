@@ -2,11 +2,11 @@ import React from 'react';
 import './Item.css'
 import { sendMessage } from '../../apiCalls'
 
-const Item = ({ id, name, imageUrl }) => {
+const Item = ({ id, name, imageUrl, user }) => {
     const handleClick = (event) => {
         event.preventDefault();
         const itemName = name;
-        const phoneNumber = '+15555555555';
+        const phoneNumber = user.phoneNumber;
         const body = {
             to: phoneNumber,
             body: itemName
