@@ -23,14 +23,30 @@ class Activity extends Component {
         }
     }
 
+    checkMessageBody(message) {
+        const body = message.body;
+        const splitBody = body.split(' ')
+        const lastCharacter = parseInt(splitBody[1])
+        const firstWord = splitBody[0]
+        console.log(firstWord, lastCharacter)
+        const items = ['Candle', 'Eucalyptus', 'Lemon', 'Rosemary']
+        if(items.includes(firstWord)) {
+            return(lastCharacter > 0 && lastCharacter < 6)
+        }
+    }
+
     filterInboundMessages() {
-        const inboundMessages = this.state.messages.filter(message => message.direction === 'inbound')
+        const inboundMessages = this.state.messages.filter(message => {
+            return message.direction === 'inbound'
+        })
         return inboundMessages
     }
 
     createList(messages) {
         return messages.map(message => {
-            return(<li>{message.body}, {message.dateCreated}</li>)
+            if(this.checkMessageBody(message)) {
+                return(<li>{message.body}, {message.dateCreated}</li>)
+            }
         })
     }
 
