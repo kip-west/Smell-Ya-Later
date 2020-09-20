@@ -3,6 +3,7 @@ import './App.css'
 import SmellKit from '../SmellKit/SmellKit'
 import Header from '../Header/Header'
 import UserProfile from '../UserProfile/UserProfile'
+import Activity from '../Activity/Activity'
 import { BrowserRouter, Route } from 'react-router-dom'
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
           <Header />
           <Route exact path='/' render={() => <SmellKit />}/>
           <Route exact path='/user-profile' render={() => <UserProfile />} />
-          <Route exact path='/activity' render={() => <h1>Recent Activity!</h1>} />
+          <Route exact path='/activity' render={() => <Activity />} />
         </BrowserRouter>
     </main>
   );
