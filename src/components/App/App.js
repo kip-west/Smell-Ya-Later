@@ -13,13 +13,14 @@ class App extends Component {
       user: {
         name: '',
         phoneNumber: ''
-      }
+      },
+      isLoggedIn: false,
     }
   }
 
   updateUserInformation = (user) => {
     console.log(user)
-    this.setState ( { user: user })
+    this.setState ( { user: user, isLoggedIn: true })
   }
 
   render() {
@@ -27,7 +28,7 @@ class App extends Component {
       <main className="App">
           <BrowserRouter>
             <Header />
-            <Route exact path='/' render={() => <SmellKit user={this.state.user} />} />
+            <Route exact path='/' render={() => <SmellKit user={this.state.user} isLoggedIn={this.state.isLoggedIn} />} />
             <Route exact path='/user-profile' render={() => <UserProfile updateProfile={this.updateUserInformation} user={this.state.user} />} />
             <Route exact path='/activity' render={() => <Activity />} />
           </BrowserRouter>
