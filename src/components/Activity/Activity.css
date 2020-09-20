@@ -5,9 +5,29 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: rgba(41, 30, 50, 1);
+}
+
+.all-ratings-container {
+    display: flex;
+    flex-direction: row;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.column-header {
+    position: sticky;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    top: 0;
+    text-align: center;
+    background: rgba(41, 30, 50, 0.8);
+    color: ghostwhite;
 }
 
 .ratings-container {
-    display: flex;
-    flex-direction: row;
+    margin: 1.25%;
+    height: 75%;
+    overflow: scroll;
 }

@@ -56,21 +56,21 @@ class Activity extends Component {
             <div className='Activity-container'>
                 <h1>Recent Activity</h1>
                 {this.state.messages && 
-                <div className='ratings-container'>
-                    <div className='lemon-ratings'>
-                        <h1>Lemon</h1>
+                <div className='all-ratings-container'>
+                    <div className='ratings-container lemon-ratings'>
+                        <h1 className='column-header'>Lemon</h1>
                         {ratings.filter(rating => rating.props.item === 'Lemon')}
                     </div>
-                    <div className='candle-ratings'>
-                        <h1>Candle</h1>
+                    <div className='ratings-container candle-ratings'>
+                        <h1 className='column-header'>Candle</h1>
                         {ratings.filter(rating => rating.props.item === 'Candle')}
                     </div>
-                    <div className='eucalyptus-ratings'>
-                        <h1>Eucalyptus</h1>
+                    <div className='ratings-container eucalyptus-ratings'>
+                        <h1 className='column-header'>Eucalyptus</h1>
                         {ratings.filter(rating => rating.props.item === 'Eucalyptus')}
                     </div>
-                    <div className='rosemary-ratings'>
-                        <h1>Rosemary</h1>
+                    <div className='ratings-container rosemary-ratings'>
+                        <h1 className='column-header'>Rosemary</h1>
                         {ratings.filter(rating => rating.props.item === 'Rosemary')}
                     </div>
                 </div>
