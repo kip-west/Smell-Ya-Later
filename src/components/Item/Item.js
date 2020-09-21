@@ -18,7 +18,7 @@ const Item = ({ id, name, imageUrl, user, isLoggedIn }) => {
     }
 
     return(
-        <div className='item-card' id={id} onClick={handleClick}>
+        <div data-testid='item-card' className='item-card' id={id} onClick={handleClick}>
             <img className='item-image' src={imageUrl} alt={name}/>
             <h1 className='item-name'>{name}</h1>
         </div>
@@ -26,7 +26,7 @@ const Item = ({ id, name, imageUrl, user, isLoggedIn }) => {
 }
 
 Item.propTypes = {
-    id: PropTypes.string,
+    id: PropTypes.number,
     name: PropTypes.string,
     imageUrl: PropTypes.string,
     user: PropTypes.object,
