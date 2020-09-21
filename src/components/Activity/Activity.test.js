@@ -64,7 +64,53 @@ describe('Activity', () => {
         expect(eucalyptusRating).toBeInTheDocument()
     })
 
-    it('Should only add details for valid text responses', () => {
-        
+    it('Should only add details for valid text responses', async () => {
+        getAllMessages.mockResolvedValueOnce({
+            messages: [
+                {
+                    sid: 'SM123456789',
+                    body: 'Lavender 5',
+                    direction: 'inbound',
+                    dateCreated: '2020-09-15T15:00:00.000Z'
+                },
+                {
+                    sid: 'SM987654321',
+                    body: 'Candle 2',
+                    direction: 'inbound',
+                    dateCreated: '2020-09-15T16:00:00.000Z'
+                },
+                {
+                    sid: 'SMabcdefghi',
+                    body: '',
+                    direction: 'inbound',
+                    dateCreated: '2020-09-15T17:00:00.000Z'
+                },
+                {
+                    sid: 'SMzyxwvuts',
+                    body: 'Eucalyptus 1',
+                    direction: 'inbound',
+                    dateCreated: '2020-09-15T18:00:00.000Z'
+                },
+                {
+                    sid: 'SMasdfjkl',
+                    body: 'Eucalyptus 6',
+                    direction: 'inbound',
+                    dateCreated: '2020-09-15T18:00:00.000Z'
+                }
+            ]
+        })
+
+        render(<Activity />)
+
+        const candleRating = await waitFor(() => screen.getByText('Your Rating: 2'))
+        const eucalyptusRating = await waitFor(() => screen.getByText('Your Rating: 1'))
+
+        screen.debug()
+
+        expect(candleRating).toBeInTheDocument()
+        expect(eucalyptusRating).toBeInTheDocument()
+        // expect(screen.getByText('Lavender')).not.toBeInTheDocument()
+        // expect(screen.getByText('Your Rating: 9')).not.toBeInTheDocument()
+        // expect(screen.getByText("Your Rating: ''")).not.toBeInTheDocument()
     })
 })
