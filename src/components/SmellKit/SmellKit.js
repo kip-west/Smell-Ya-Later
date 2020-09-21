@@ -45,9 +45,8 @@ class SmellKit extends Component {
 }
 
 SmellKit.propTypes = {
-    id: PropTypes.number,
-    image: PropTypes.string,
-    name: PropTypes.string,
+    user: PropTypes.string,
+    isLoggedIn: PropTypes.bool,
 }
 
 export default SmellKit
