@@ -23,6 +23,8 @@
     opacity: 0.5;
     font-weight: bold;
     justify-self: center;
+    border: none;
+    background-color: none;
 }
 
 .close:hover,

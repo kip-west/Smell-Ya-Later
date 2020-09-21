@@ -21,7 +21,6 @@ export const getAllMessages = async () => {
 }
 
 export const sendMessage = async (body) => {
-    console.log(body)
     const response = await fetch(`${rootUrl}/api/v1/messages`, {
         'method': 'POST',
         'headers': {
@@ -32,6 +31,20 @@ export const sendMessage = async (body) => {
     if(response.ok) {
         const res = response.json()
         return res
+    } else {
+        throw response
+    }
+}
+
+export const deleteMessage = async (id) => {
+    const response = await fetch(`${rootUrl}/api/v1/messages/${id}`, {
+        'method': 'DELETE',
+        'headers': {
+            'Content-Type': 'application/json'
+        }
+    })
+    if (response.ok) {
+        return response
     } else {
         throw response
     }

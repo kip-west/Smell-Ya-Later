@@ -1,6 +1,6 @@
 import React from 'react';
 import Activity from './Activity'
-import { render, screen, waitFor } from '@testing-library/react'
+import { fireEvent, render, screen, wait, waitFor } from '@testing-library/react'
 import { getAllMessages } from '../../apiCalls'
 jest.mock('../../apiCalls')
 
@@ -110,5 +110,27 @@ describe('Activity', () => {
         // expect(screen.getByText('Lavender')).not.toBeInTheDocument()
         // expect(screen.getByText('Your Rating: 9')).not.toBeInTheDocument()
         // expect(screen.getByText("Your Rating: ''")).not.toBeInTheDocument()
+    })
+
+    it('Should remove deleted ActivityDetails from the display', async () => {
+        getAllMessages.mockResolvedValueOnce({
+            messages: [
+                {
+                    sid: 'SM123456789',
+                    body: 'Lemon 4',
+                    direction: 'inbound',
+                    dateCreated: '2020-09-15T15:00:00.000Z'
+                }
+            ]
+        })
+
+        render(<Activity />)
+
+        const lemonRating = await waitFor(() => screen.getByText('Your Rating: 4'))
+        const deleteButton = await waitFor(() => screen.getByRole('button'))
+        expect(lemonRating).toBeInTheDocument();
+
+        fireEvent.click(deleteButton)
+        expect(lemonRating).not.toBeInTheDocument()
     })
 })
