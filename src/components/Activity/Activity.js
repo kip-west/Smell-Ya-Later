@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './Activity.css'
-import { getAllMessages } from '../../apiCalls'
+import { deleteMessage, getAllMessages } from '../../apiCalls'
 import ActivityDetails from '../ActivityDetails/ActivityDetails'
 import Moment from 'react-moment'
 
@@ -48,8 +48,19 @@ class Activity extends Component {
         const filteredMessages = messages.filter(message => this.checkMessageBody(message))
         return filteredMessages.map(message => {
             const body = message.body.split(' ')
-            return(<ActivityDetails key={message.id} id={message.id} item={body[0]} rating={body[1]} date={message.dateCreated} />)
+            return(<ActivityDetails key={message.id} id={message.id} item={body[0]} rating={body[1]} date={message.dateCreated} deleteActivityDetail={this.deleteActivityDetail} />)
         })
+    }
+
+    deleteActivityDetail = async (id) => {
+        try {
+            deleteMessage(id)
+            const newMessages = this.state.messages.filter(message => message.id !== id)
+            this.setState({ messages: newMessages })
+        } catch (error) {
+            this.setState({ error: error })
+        }
+
     }
 
     render() {
