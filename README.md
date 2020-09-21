@@ -25,13 +25,15 @@ Smell Ya Later is designed to help users engage with their smell kit and track t
 
 ## Project in Action
 - On the home page, users are met with a pre-determined smell kit informed by items used in prior research, as well as some things you could expect to find around the house. From here, as well as any other page, users are able to get more information about my app from the `About` dropdown.
+
 ![](READMEgifs/jkw-Home-page.gif)
 
 - To start receiving text messages, users must update their contact information in the `User Profile` page. Once this is submitted, users are able to return to the home page and click on any item in their kit. This click event triggers the text message prompt to the users phone number.
-![](READMEgifs/jkw-UserProfile.gif)
-![](READMEgifs/jkw-text-messages.gif)
+
+![](READMEgifs/jkw-UserProfile.gif) ![](READMEgifs/jkw-text-messages.gif)
 
 - Once a user replies to this prompt, they are able to see their all of their ratings in the `Activity` page. Users are provided with all of there ratings, separated by item, and ordered chronologically by date and time.
+
 ![](READMEgifs/jkw-RecentActivity.gif)
 
 ## Wins and Challenges
