@@ -105,8 +105,6 @@ describe('Activity', () => {
         const candleRating = await waitFor(() => screen.getByText('Your Rating: 2'))
         const eucalyptusRating = await waitFor(() => screen.getByText('Your Rating: 1'))
 
-        screen.debug()
-
         expect(candleRating).toBeInTheDocument()
         expect(eucalyptusRating).toBeInTheDocument()
         // expect(screen.getByText('Lavender')).not.toBeInTheDocument()
