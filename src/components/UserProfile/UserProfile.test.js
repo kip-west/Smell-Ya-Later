@@ -4,7 +4,12 @@ import { render, screen, fireEvent } from '@testing-library/react'
 
 describe('User Profile', () => {
     it('Should display correct content when rendered', () => {
-        render(<UserProfile />)
+        render(<UserProfile user={{
+            user: {
+                name: '',
+                phoneNumber: ''
+            }
+        }}/>)
 
         const userProfileHeading = screen.getByRole('heading', { name: 'User Profile' })
 
@@ -13,7 +18,12 @@ describe('User Profile', () => {
 
     describe('Update Contact Information Form', () => {
         it('Should have a form where users can update their information', () => {
-            render(<UserProfile />)
+            render(<UserProfile user={{
+                user: {
+                    name: '',
+                    phoneNumber: ''
+                }
+            }}/>)
     
             const nameInput = screen.getByPlaceholderText('Enter name here')
             const phoneNumberInput = screen.getByPlaceholderText('Enter phone number here')
@@ -25,7 +35,12 @@ describe('User Profile', () => {
         })
 
         it('Should update it\'s own values on change', () => {
-            render(<UserProfile />)
+            render(<UserProfile user={{
+                user: {
+                    name: '',
+                    phoneNumber: ''
+                }
+            }}/>)
 
             const nameInput = screen.getByPlaceholderText('Enter name here')
             const phoneInput = screen.getByPlaceholderText('Enter phone number here')
@@ -38,7 +53,8 @@ describe('User Profile', () => {
         })
 
         it('Should fire a method & clear form inputs on submit', () => {
-            render(<UserProfile />)
+            const mockUpdateUserInformation = jest.fn()
+            render(<UserProfile user={{ user: { name: '', phoneNumber: '' } }} updateProfile={mockUpdateUserInformation} />)
             
             const nameInput = screen.getByPlaceholderText('Enter name here')
             const phoneInput = screen.getByPlaceholderText('Enter phone number here')
@@ -55,7 +71,8 @@ describe('User Profile', () => {
         })
 
         it('Should return an error message if form inputs are empty', () => {
-            render(<UserProfile />)
+            const mockUpdateUserInformation = jest.fn()
+            render(<UserProfile user={{ user: { name: '', phoneNumber: '' } }} updateProfile={mockUpdateUserInformation} />)
 
             const nameInput = screen.getByPlaceholderText('Enter name here')
             const phoneInput = screen.getByPlaceholderText('Enter phone number here')

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './UserProfile.css'
+import PropTypes from 'prop-types'
 
 class UserProfile extends Component {
     constructor(props) {
@@ -59,6 +60,11 @@ class UserProfile extends Component {
             </div>
         )
     }
+}
+
+UserProfile.propTypes = {
+    updateProfile: PropTypes.func,
+    user: PropTypes.object,
 }
 
 export default UserProfile

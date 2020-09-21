@@ -1,6 +1,7 @@
 import React from 'react';
 import './Item.css'
 import { sendMessage } from '../../apiCalls'
+import PropTypes from 'prop-types'
 
 const Item = ({ id, name, imageUrl, user, isLoggedIn }) => {
     const handleClick = (event) => {
@@ -17,11 +18,19 @@ const Item = ({ id, name, imageUrl, user, isLoggedIn }) => {
     }
 
     return(
-        <div className='item-card' id={id} onClick={handleClick}>
+        <div data-testid='item-card' className='item-card' id={id} onClick={handleClick}>
             <img className='item-image' src={imageUrl} alt={name}/>
             <h1 className='item-name'>{name}</h1>
         </div>
     )
+}
+
+Item.propTypes = {
+    id: PropTypes.number,
+    name: PropTypes.string,
+    imageUrl: PropTypes.string,
+    user: PropTypes.object,
+    isLoggedIn: PropTypes.bool
 }
 
 export default Item
