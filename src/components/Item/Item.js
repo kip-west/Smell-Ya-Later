@@ -5,12 +5,12 @@ import { sendMessage } from '../../apiCalls'
 const Item = ({ id, name, imageUrl, user, isLoggedIn }) => {
     const handleClick = (event) => {
         event.preventDefault();
-        if(isLoggedIn()) {
+        if(isLoggedIn) {
             const itemName = name;
             const phoneNumber = user.phoneNumber;
             const body = {
                 to: phoneNumber,
-                body: itemName
+                body: `Hi ${user.name}! Please concentrate on taking gentle sniffs of your ${itemName} for 20 seconds. Be as attentive as you can and try to block out other intrusive thoughts. Please reply with the item name & 1 (I didn't smell the ${itemName} at all) to 5 (I could smell the ${itemName} completely) score when you're done.`
             }
             sendMessage(body)
         }
