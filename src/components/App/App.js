@@ -19,7 +19,6 @@ class App extends Component {
   }
 
   updateUserInformation = (user) => {
-    console.log(user)
     this.setState ( { user: user, isLoggedIn: true })
   }
 

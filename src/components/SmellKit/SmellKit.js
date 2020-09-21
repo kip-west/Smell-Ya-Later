@@ -45,7 +45,7 @@ class SmellKit extends Component {
 }
 
 SmellKit.propTypes = {
-    user: PropTypes.string,
+    user: PropTypes.object,
     isLoggedIn: PropTypes.bool,
 }
 

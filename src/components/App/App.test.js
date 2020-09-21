@@ -12,12 +12,14 @@ describe('App', () => {
     const userProfileButton = screen.getByRole('link', { name: 'User Profile' })
     const activityButton = screen.getByRole('link', { name: 'Activity' })
     const smellKitHeading = screen.getByRole('heading', { name: 'Your Smell Kit' })
+    const collapsibleHeading = screen.getByText('About')
 
     expect(headerText).toBeInTheDocument();
     expect(homeButton).toBeInTheDocument();
     expect(userProfileButton).toBeInTheDocument();
     expect(activityButton).toBeInTheDocument();
     expect(smellKitHeading).toBeInTheDocument();
+    expect(collapsibleHeading).toBeInTheDocument();
   })
 
   it('Should route to the appropriate page when each NavLink is clicked', () => {
