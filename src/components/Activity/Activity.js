@@ -3,6 +3,7 @@ import './Activity.css'
 import { getAllMessages } from '../../apiCalls'
 import ActivityDetails from '../ActivityDetails/ActivityDetails'
 import Moment from 'react-moment'
+import PropTypes from 'prop-types'
 
 class Activity extends Component {
     constructor() {
@@ -80,6 +81,13 @@ class Activity extends Component {
             </div>
         )
     }
+}
+
+Activity.propTypes = {
+    id: PropTypes.string,
+    item: PropTypes.string,
+    rating: PropTypes.number,
+    date: PropTypes.string
 }
 
 export default Activity
