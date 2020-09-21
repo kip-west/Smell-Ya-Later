@@ -1,5 +1,5 @@
 # Smell Ya Later
-This project represents the solo work of Jake West. For full functionality, you need access to both my ([Front End](https://github.com/jkwest-93/Smell-Ya-Later)) and ([Back End](https://github.com/jkwest-93/Smell-Ya-Later-Express)) repos.
+This project represents the solo work of Jake West. For full functionality, you need access to both my [Front End](https://github.com/jkwest-93/Smell-Ya-Later) and ([Back End](https://github.com/jkwest-93/Smell-Ya-Later-Express)) repos.
 
 ## Project Overview
 Our sense of smell is heavily intertwined with our emotions and memories. In the wake of the COVID-19 pandemic, an unprecedented number of people report experiencing a partial or complete loss of smell. A growing body of research indicates that smell therapy may help these individuals regain their sense of smell more quickly. This type of treatment encourages users to spend conscious time daily smelling a few items from their unique smell kit.
@@ -15,7 +15,7 @@ Smell Ya Later is designed to help users engage with their smell kit and track t
 - Test driven development with React Testing Library
 
 ## Installation Instructions
-- Close down both the ([Front End](https://github.com/jkwest-93/Smell-Ya-Later)) and ([Back End](https://github.com/jkwest-93/Smell-Ya-Later-Express)) repositories.
+- Close down both the [Front End](https://github.com/jkwest-93/Smell-Ya-Later) and [Back End](https://github.com/jkwest-93/Smell-Ya-Later-Express) repositories.
     - When you run git clone, you can name the project as you choose like this (you replace the [...] with the terminal command arguments): git clone git@github.com:jkwest-93/Smell-Ya-Later.git [...]
 - Be sure to run `npm install` in both projects to update dependencies.
 - Move into the Back End directory, and complete the following steps:
