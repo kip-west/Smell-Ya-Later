@@ -1,6 +1,6 @@
 import React from 'react';
 import Activity from './Activity'
-import { render, screen } from '@testing-library/react'
+import { render, screen, waitFor } from '@testing-library/react'
 import { getAllMessages } from '../../apiCalls'
 jest.mock('../../apiCalls')
 
@@ -13,28 +13,32 @@ describe('Activity', () => {
         expect(heading).toBeInTheDocument()
     })
 
-    it('Should call the getAllMessages method on display', () => {
+    it('Should call the getAllMessages method on display', async () => {
         getAllMessages.mockResolvedValueOnce({
             messages: [
                 {
-                    body: 'Lemon 3',
+                    sid: 'SM123456789',
+                    body: 'Lemon 4',
                     direction: 'inbound',
-                    dateCreated: '2020-09-15T17:00:00.000Z'
+                    dateCreated: '2020-09-15T15:00:00.000Z'
                 },
                 {
+                    sid: 'SM987654321',
                     body: 'Candle 2',
                     direction: 'inbound',
-                    dateCreated: '2020-09-15T17:00:00.000Z'
+                    dateCreated: '2020-09-15T16:00:00.000Z'
                 },
                 {
+                    sid: 'SMabcdefghi',
                     body: 'Rosemary 3',
                     direction: 'inbound',
                     dateCreated: '2020-09-15T17:00:00.000Z'
                 },
                 {
+                    sid: 'SMzyxwvuts',
                     body: 'Eucalyptus 1',
                     direction: 'inbound',
-                    dateCreated: '2020-09-15T17:00:00.000Z'
+                    dateCreated: '2020-09-15T18:00:00.000Z'
                 }
             ]
         })
@@ -45,10 +49,22 @@ describe('Activity', () => {
         const candleHeading = screen.getByRole('heading', { name: 'Candle' })
         const rosemaryHeading = screen.getByRole('heading', { name: 'Rosemary' })
         const eucalyptusHeading = screen.getByRole('heading', { name: 'Eucalyptus' })
+        const lemonRating = await waitFor(() => screen.getByText('Your Rating: 4'))
+        const candleRating = await waitFor(() => screen.getByText('Your Rating: 2'))
+        const rosemaryRating = await waitFor(() => screen.getByText('Your Rating: 3'))
+        const eucalyptusRating = await waitFor(() => screen.getByText('Your Rating: 1'))
 
         expect(lemonHeading).toBeInTheDocument()
         expect(candleHeading).toBeInTheDocument()
         expect(rosemaryHeading).toBeInTheDocument()
         expect(eucalyptusHeading).toBeInTheDocument()
+        expect(lemonRating).toBeInTheDocument()
+        expect(candleRating).toBeInTheDocument()
+        expect(rosemaryRating).toBeInTheDocument()
+        expect(eucalyptusRating).toBeInTheDocument()
+    })
+
+    it('Should only add details for valid text responses', () => {
+        
     })
 })
