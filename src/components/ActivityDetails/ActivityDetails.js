@@ -4,7 +4,6 @@ import moment from 'moment'
 import PropTypes from 'prop-types'
 
 const ActivityDetails = ({ id, rating, date, item }) => {
-    console.log(date)
     return(
         <div className='Activity-Details' className={`${item}-detail`} id={id}>
             <span className="close" id={id}>&times;</span>
@@ -17,8 +16,8 @@ const ActivityDetails = ({ id, rating, date, item }) => {
 ActivityDetails.propTypes = {
     id: PropTypes.string,
     item: PropTypes.string,
-    rating: PropTypes.number,
-    date: PropTypes.string
+    rating: PropTypes.string,
+    date: PropTypes.object,
 }
 
 export default ActivityDetails
