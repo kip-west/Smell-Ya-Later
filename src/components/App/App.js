@@ -5,7 +5,6 @@ import Header from '../Header/Header'
 import UserProfile from '../UserProfile/UserProfile'
 import Activity from '../Activity/Activity'
 import { BrowserRouter, Route } from 'react-router-dom'
-import PropTypes from 'prop-types'
 
 class App extends Component {
   constructor() {
@@ -36,12 +35,6 @@ class App extends Component {
       </main>
     )
   }
-}
-
-App.propTypes = {
-  user: PropTypes.object,
-  isLoggedIn: PropTypes.bool,
-  updateProfile: PropTypes.func,
 }
 
 export default App;
